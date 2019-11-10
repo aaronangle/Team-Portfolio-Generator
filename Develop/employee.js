@@ -1,46 +1,56 @@
-function Employee(name, id, title) {
-    this.name = name;
-    this.id = id;
-    this.title = title;
-}
-function Manager(officeNumber) {
-    Employee.call(this, name, id, title)
-    this.officeNumber = officeNumber;
-}
-function Engineer(github) {
-    Employee.call(this, name, id, title)
-    this.github = github;
-}
-function Intern(school) {
-    Employee.call(this, name, id, title)
-    this.school = school
-}
-
-Employee.prototype.getName = function () {
-    return this.name
+class Employee {
+    constructor(name, id, email) {
+        if (!name) {
+            throw new Error("Expected value of name")
+        }
+        if (isNaN(id) || id < 0) {
+            throw new Error("Expected a number")
+        }
+        if (!email) {
+            throw new Error("Expected an email")
+        }
+        this.name = name;
+        this.id = id;
+        this.email = email;
+    }
+    returnName() {
+        return this.name
+    }
 }
 
-Employee.prototype.getId = function () {
-    return this.id
+class Manager extends Employee {
+    constructor(name, id, email, number) {
+        if (isNaN(number) || number < 0) {
+            throw new Error("Expected a number")
+        }
+        super(name, id, email)
+        this.number = number;
+    }
 }
 
-Employee.prototype.getEmail = function () {
-    return this.email
+class Intern extends Employee {
+    constructor(name, id, email, school) {
+        if (!school) {
+            throw new Error("Expected a school")
+        }
+        super(name, id, email)
+        this.school = school
+    }
 }
 
-Employee.prototype.getRole = function () {
-
+class Engineer extends Employee {
+    constructor(name, id, email, github) {
+        if (!github) {
+            throw new Error("Expected a github")
+        }
+        super(name, id, email)
+        this.github = github;
+    }
 }
-Engineer.prototype.getGitHub = function () {
-    return this.github
+
+module.exports = {
+    Employee,
+    Engineer,
+    Intern,
+    Manager
 }
-Intern.prototype.getSchool = function () {
-    return this.school
-}
-
-
-module.exports = Employee;
-
-const ron = new Intern(arizona, this, aaron, job, intern)
-
-ron.getName()
