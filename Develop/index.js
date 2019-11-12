@@ -18,12 +18,26 @@ function addManager() {
         {
             message: "What is your manager's ID?",
             type: "input",
-            name: "id"
+            name: "id",
+            validate: async function (userInput) {
+                const num = parseInt(userInput)
+                if (typeof userInput !== "number" || num > 0) {
+                    return "Value must be a valid number greater than 0"
+                }
+                return true;
+            }
         },
         {
             message: "What is your manager's office number?",
             type: "input",
-            name: "number"
+            name: "number",
+            validate: async function (userInput) {
+                const num = parseInt(userInput)
+                if (typeof userInput !== "number" || num > 0) {
+                    return "Value must be a valid number greater than 0"
+                }
+                return true;
+            }
         },
         {
             message: "What is your manager's email?",
@@ -65,7 +79,14 @@ function addIntern() {
         {
             message: "What is the ID of your Intern?",
             type: "input",
-            name: "id"
+            name: "id",
+            validate: async function (userInput) {
+                const num = parseInt(userInput)
+                if (typeof userInput !== "number" || num > 0) {
+                    return "Value must be a valid number greater than 0"
+                }
+                return true;
+            }
         },
         {
             message: "What is your Intern's email",
@@ -94,7 +115,14 @@ function addEngineer() {
         {
             message: "What is the ID of your Engineer?",
             type: "input",
-            name: "id"
+            name: "id",
+            validate: async function (userInput) {
+                const num = parseInt(userInput)
+                if (typeof userInput !== "number" || num > 0) {
+                    return "Value must be a valid number greater than 0"
+                }
+                return true;
+            }
         },
         {
             message: "What is your Engineer's email",
