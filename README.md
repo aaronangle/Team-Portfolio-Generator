@@ -1,3 +1,3 @@
 # Team-Portfolio-Generator
 
-This application takes in user input from the terminal by using the Inquirer npm. It allows user's to generate a profile for members of there work team. It asks for basic information for each member of the team and then will render the information to the main HTML page. The application uses regular expressions to inject the gathered data into the HTML and create the page. You can view a sample video of the project here: 
+This application takes in user input from the terminal by using the Inquirer npm. It allows user's to generate a profile for members of there work team. It asks for basic information for each member of the team and then will render the information to the main HTML page. The application uses regular expressions to inject the gathered data into the HTML and create the page. You can view a sample video of the project here: https://drive.google.com/file/d/1TvhxWt1rGNXmqIBSSdM6jCVU3PYpf0tI/view
