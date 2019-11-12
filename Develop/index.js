@@ -21,7 +21,7 @@ function addManager() {
             name: "id",
             validate: async function (userInput) {
                 const num = parseInt(userInput)
-                if (typeof userInput !== "number" || num > 0) {
+                if (isNaN(userInput) || num < 0) {
                     return "Value must be a valid number greater than 0"
                 }
                 return true;
@@ -33,7 +33,7 @@ function addManager() {
             name: "number",
             validate: async function (userInput) {
                 const num = parseInt(userInput)
-                if (typeof userInput !== "number" || num > 0) {
+                if (isNaN(userInput) || num < 0) {
                     return "Value must be a valid number greater than 0"
                 }
                 return true;
@@ -82,7 +82,7 @@ function addIntern() {
             name: "id",
             validate: async function (userInput) {
                 const num = parseInt(userInput)
-                if (typeof userInput !== "number" || num > 0) {
+                if (isNaN(userInput) || num < 0) {
                     return "Value must be a valid number greater than 0"
                 }
                 return true;
@@ -118,7 +118,7 @@ function addEngineer() {
             name: "id",
             validate: async function (userInput) {
                 const num = parseInt(userInput)
-                if (typeof userInput !== "number" || num > 0) {
+                if (isNaN(userInput) || num < 0) {
                     return "Value must be a valid number greater than 0"
                 }
                 return true;
